@@ -1,6 +1,9 @@
-package com.carlossantos.CadastrodeNinjas;
+package com.carlossantos.CadastrodeNinjas.Ninjas;
 
+import com.carlossantos.CadastrodeNinjas.Missoes.MissoesModel;
 import jakarta.persistence.*;
+
+import java.util.List;
 
 //Entity  transforma uma classe em uma entidade do banco de dados
 @Entity
@@ -12,7 +15,13 @@ public class NinjaModel {
     private Long id;
     private String nome;
     private String email;
-    privat int idade;
+    private int idade;
+
+    // @ManyToOne ela fala que relação de tabelas>> Um ninja pode ter apenas uma missão
+    @ManyToOne
+    @JoinColumn(name = "missoes_id") // criando a chave estrageira do banco de dados
+    private MissoesModel missoes;
+
 
     public NinjaModel() {
     }
