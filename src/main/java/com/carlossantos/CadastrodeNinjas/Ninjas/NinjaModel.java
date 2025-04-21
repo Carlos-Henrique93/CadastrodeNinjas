@@ -18,10 +18,19 @@ public class NinjaModel {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column (name = "id_ninja")
     private Long id;
+
+    @Column(name = "nome_ninja")
     private String nome;
+
     @Column(unique = true)
     private String email;
+
+    @Column(name = "aldeia_ninja")
+    private String aldeia;
+
+    @Column(name = "idade_ninja")
     private int idade;
 
     // @ManyToOne ela fala que relação de tabelas>> Um ninja pode ter apenas uma missão
