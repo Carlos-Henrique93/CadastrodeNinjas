@@ -3,6 +3,8 @@ package com.carlossantos.CadastrodeNinjas.Ninjas;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
+import java.util.OptionalInt;
 
 @Service
 public class NinjaService {
@@ -17,5 +19,14 @@ public class NinjaService {
     // o findAll é mesmo que querry sql
     public List<NinjaModel> listarNinjas() {
         return ninjaRepository.findAll();
+    }
+
+    // Listar todos os meus ninjas por ID
+
+    //Listar todos meus Ninjas
+    // o findAll é mesmo que querry sql
+    public NinjaModel listarNinjasPorId(Long id) {
+        Optional<NinjaModel> ninjaPorID = ninjaRepository.findById(id);
+        return ninjaPorID.orElse(null);
     }
 }
