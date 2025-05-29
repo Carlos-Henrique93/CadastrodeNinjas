@@ -1,6 +1,7 @@
 package com.carlossantos.CadastrodeNinjas.Missoes;
 
 
+import com.carlossantos.CadastrodeNinjas.Ninjas.NinjaModel;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -19,6 +20,12 @@ public class MissoesController  {
     @GetMapping("/listar")
     public List<MissoesModel> listarMissao(){
         return missoesService.listarMissao();
+    }
+
+    // Mostrar todas as missoes por Id (Read) em conjunto com o service
+    @GetMapping("/listar/{id}")
+    public MissoesModel listarMissoesPorId(@PathVariable Long id){
+        return missoesService.listarMissoesPorId(id);
     }
 
     //POST -- Mandar uma requisição para Criar as missoes
