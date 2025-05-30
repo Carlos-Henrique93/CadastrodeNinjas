@@ -30,6 +30,9 @@ public class NinjaModel {
     @Column(name = "aldeia_ninja")
     private String aldeia;
 
+    @Column(name = "rank")
+    private  String rank;
+
     @Column(name = "idade_ninja")
     private int idade;
 
